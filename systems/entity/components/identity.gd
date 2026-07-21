@@ -1,12 +1,10 @@
 class_name Identity extends Component
 
 var uid: String
-var data: EntityData
+var entity_data: EntityData
 var entity: Node3D
 
-func _ready() -> void:
-	entity = get_parent()
+func initialize(data: Dictionary) -> void:
 	uid = str(ResourceUID.create_id())
-
-func initialize(_data: Dictionary):
-	
+	entity_data = data.res
+	entity = get_parent()
